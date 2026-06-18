@@ -336,7 +336,7 @@ html,body { background:var(--bg); color:#fff; min-height:100vh; font-family:'Out
 </div>
 
 <script>
-const MAKE = "VLOZ_SEM_SVOJ_MAKE_WEBHOOK_URL";
+const MAKE = "https://hook.eu2.make.com/1cabchpx5s18z9ks732pfb9kbgg76t1x";;
 const AREAS = ["Problém","Zákazník","Moment","Riešenie","Odlíšenie","Model","Ponuka","Distribúcia","Ďalší krok"];
 const FT = [
   ["Jasnosť problému je silná stránka.","Problém je definovaný len všeobecne — zákazník musí cítiť, že hovoríš o ňom, nie o všetkých.","Bez jasne pomenovaného problému hľadáš zákazníka naslepo. <strong>Toto je najčastejšia príčina nulových predajov.</strong>"],
@@ -435,7 +435,7 @@ function buildRes() {
 }
 
 async function sendMake() {
-  if(MAKE==="VLOZ_SEM_SVOJ_MAKE_WEBHOOK_URL")return;
+  if(MAKE==="https://hook.eu2.make.com/1cabchpx5s18z9ks732pfb9kbgg76t1x")return;
   const tot=scores.reduce((a,b)=>a+b,0);
   const crit=scores.map((s,i)=>({s,i})).filter(x=>x.s>=2).map(x=>AREAS[x.i]).join(", ");
   const warn=scores.map((s,i)=>({s,i})).filter(x=>x.s===1).map(x=>AREAS[x.i]).join(", ");
