@@ -3,140 +3,802 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STRATE9Y Stress Test</title>
+<title>STRATE9Y® biznis test</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
 :root {
-  --red:#E8080F; --red-l:#FF3355; --red-d:#B00008;
-  --bg:#080808; --bg2:#0F0D0C; --bg3:#161210;
-  --br:rgba(255,255,255,0.07); --br2:rgba(255,255,255,0.12);
-  --m:rgba(255,255,255,0.45); --f:rgba(255,255,255,0.18);
+  --red:#E8080F;
+  --red-l:#FF3355;
+  --red-d:#B00008;
+  --bg:#080808;
+  --bg2:#0F0D0C;
+  --bg3:#161210;
+  --br:rgba(255,255,255,0.07);
+  --br2:rgba(255,255,255,0.12);
+  --m:rgba(255,255,255,0.45);
+  --f:rgba(255,255,255,0.18);
 }
-html,body { background:var(--bg); color:#fff; min-height:100vh; font-family:'Outfit',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; margin:0; padding:0; }
+
+html, body {
+  background:var(--bg);
+  color:#fff;
+  min-height:100vh;
+  font-family:'Outfit', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  margin:0;
+  padding:0;
+}
 
 /* PAGES */
 .pg { display:none; min-height:100vh; }
 .pg.on { display:block; animation:fu 0.4s ease; }
-@keyframes fu { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
+
+@keyframes fu {
+  from { opacity:0; transform:translateY(14px); }
+  to { opacity:1; transform:translateY(0); }
+}
 
 /* SHARED */
-.logo { display:flex; justify-content:center; padding:28px 24px 0; }
-.logo img { height:32px; }
-.ey { display:inline-flex; align-items:center; gap:12px; margin-bottom:18px; }
-.ey-l { width:24px; height:1px; background:var(--red); }
-.ey-t { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--red); }
+.logo {
+  display:flex;
+  justify-content:center;
+  padding:28px 24px 0;
+}
 
-/* ── PAGE 1: VSTUP ── */
-#pg1 { position:relative; overflow:hidden; }
-.p1-img { position:absolute; right:-5%; top:0; bottom:0; width:65%; object-fit:cover; object-position:center top; opacity:0.32; filter:grayscale(15%); pointer-events:none; }
-.p1-gr { position:absolute; inset:0; background:linear-gradient(to right,var(--bg) 38%,rgba(8,8,8,0.5) 65%,transparent 100%); pointer-events:none; }
-.p1-gb { position:absolute; bottom:0; left:0; right:0; height:160px; background:linear-gradient(to top,var(--bg),transparent); pointer-events:none; }
-.p1-glow { position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:400px; background:radial-gradient(ellipse,rgba(232,8,15,0.09) 0%,transparent 65%); pointer-events:none; }
-.p1-c { position:relative; z-index:2; max-width:580px; margin:0 auto; padding:20px 24px 60px; text-align:center; }
-.p1-c h1 { font-family:'Fraunces',serif; font-size:clamp(36px,5vw,64px); font-weight:600; line-height:1.02; letter-spacing:-2px; margin-bottom:18px; }
-.p1-c h1 em { font-style:italic; color:var(--red-l); font-weight:300; }
-.p1-sub { font-size:16px; color:var(--m); line-height:1.65; max-width:460px; margin:0 auto 28px; }
-.p1-sub strong { color:rgba(255,255,255,0.8); font-weight:500; }
-.p1-meta { display:flex; align-items:center; justify-content:center; gap:24px; margin-bottom:28px; flex-wrap:wrap; }
+.logo img { height:32px; }
+
+.ey {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.ey-l {
+  width:24px;
+  height:1px;
+  background:var(--red);
+}
+
+.ey-t {
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--red);
+}
+
+/* PAGE 1: VSTUP */
+#pg1 {
+  position:relative;
+  overflow:hidden;
+}
+
+.p1-img {
+  position:absolute;
+  right:-5%;
+  top:0;
+  bottom:0;
+  width:65%;
+  object-fit:cover;
+  object-position:center top;
+  opacity:0.32;
+  filter:grayscale(15%);
+  pointer-events:none;
+}
+
+.p1-gr {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right,var(--bg) 38%,rgba(8,8,8,0.5) 65%,transparent 100%);
+  pointer-events:none;
+}
+
+.p1-gb {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:160px;
+  background:linear-gradient(to top,var(--bg),transparent);
+  pointer-events:none;
+}
+
+.p1-glow {
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:600px;
+  height:400px;
+  background:radial-gradient(ellipse,rgba(232,8,15,0.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.p1-c {
+  position:relative;
+  z-index:2;
+  max-width:580px;
+  margin:0 auto;
+  padding:20px 24px 60px;
+  text-align:center;
+}
+
+.p1-c h1 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:600;
+  line-height:1.02;
+  letter-spacing:-2px;
+  margin-bottom:18px;
+}
+
+.p1-c h1 em {
+  font-style:italic;
+  color:var(--red-l);
+  font-weight:300;
+}
+
+.p1-sub {
+  font-size:16px;
+  color:var(--m);
+  line-height:1.65;
+  max-width:460px;
+  margin:0 auto 28px;
+}
+
+.p1-sub strong {
+  color:rgba(255,255,255,0.8);
+  font-weight:500;
+}
+
+.p1-meta {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+}
+
 .p1-mi { text-align:center; }
-.p1-mn { font-family:'Fraunces',serif; font-size:38px; font-weight:600; color:#fff; line-height:1; }
+
+.p1-mn {
+  font-family:'Fraunces', serif;
+  font-size:38px;
+  font-weight:600;
+  color:#fff;
+  line-height:1;
+}
+
 .p1-mn span { color:var(--red); }
-.p1-ml { font-size:13px; color:var(--m); margin-top:5px; }
-.p1-md { width:1px; height:36px; background:rgba(255,255,255,0.1); }
-.p1-form { max-width:420px; margin:0 auto; }
-.inp { width:100%; padding:15px 18px; background:rgba(255,255,255,0.05); border:1px solid var(--br2); border-radius:8px; color:#fff; font-size:15px; font-family:'Outfit',sans-serif; outline:none; margin-bottom:10px; transition:border-color 0.2s; }
+
+.p1-ml {
+  font-size:13px;
+  color:var(--m);
+  margin-top:5px;
+}
+
+.p1-md {
+  width:1px;
+  height:36px;
+  background:rgba(255,255,255,0.1);
+}
+
+.p1-form {
+  max-width:420px;
+  margin:0 auto;
+}
+
+.inp {
+  width:100%;
+  padding:15px 18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--br2);
+  border-radius:8px;
+  color:#fff;
+  font-size:15px;
+  font-family:'Outfit', sans-serif;
+  outline:none;
+  margin-bottom:10px;
+  transition:border-color 0.2s;
+}
+
 .inp:focus { border-color:rgba(232,8,15,0.5); }
 .inp::placeholder { color:rgba(255,255,255,0.25); }
-.btn { width:100%; padding:16px; background:var(--red); color:#fff; font-family:'Outfit',sans-serif; font-weight:600; font-size:15px; border-radius:8px; border:none; cursor:pointer; transition:all 0.25s; }
-.btn:hover { background:var(--red-l); transform:translateY(-1px); }
-.p1-note { font-size:12px; color:var(--f); margin-top:10px; }
-.p1-proof { max-width:420px; margin:32px auto 0; padding-top:24px; border-top:1px solid var(--br); text-align:left; }
-.proof-lbl { font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--f); margin-bottom:14px; }
-.proof-item { display:flex; align-items:flex-start; gap:10px; padding:7px 0; }
-.proof-ck { color:var(--red); font-size:11px; flex-shrink:0; margin-top:3px; }
-.proof-tx { font-size:14px; color:var(--m); line-height:1.5; }
-.proof-tx strong { color:rgba(255,255,255,0.75); font-weight:500; }
 
-/* ── PAGE 2: TEST ── */
+.p1-err {
+  min-height:18px;
+  margin:0 0 10px;
+  color:#ff4d53;
+  font-size:12px;
+  line-height:1.4;
+  text-align:left;
+}
+
+.btn {
+  width:100%;
+  padding:16px;
+  background:var(--red);
+  color:#fff;
+  font-family:'Outfit', sans-serif;
+  font-weight:600;
+  font-size:15px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  transition:all 0.25s;
+}
+
+.btn:hover {
+  background:var(--red-l);
+  transform:translateY(-1px);
+}
+
+.p1-note {
+  font-size:12px;
+  color:var(--f);
+  margin-top:10px;
+}
+
+.p1-proof {
+  max-width:420px;
+  margin:32px auto 0;
+  padding-top:24px;
+  border-top:1px solid var(--br);
+  text-align:left;
+}
+
+.proof-lbl {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--f);
+  margin-bottom:14px;
+}
+
+.proof-item {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:7px 0;
+}
+
+.proof-ck {
+  color:var(--red);
+  font-size:11px;
+  flex-shrink:0;
+  margin-top:3px;
+}
+
+.proof-tx {
+  font-size:14px;
+  color:var(--m);
+  line-height:1.5;
+}
+
+.proof-tx strong {
+  color:rgba(255,255,255,0.75);
+  font-weight:500;
+}
+
+/* PAGE 2: TEST */
 #pg2 { background:var(--bg); }
-.t-wrap { max-width:660px; margin:0 auto; padding:36px 24px 80px; }
-.t-prog { display:flex; align-items:center; gap:16px; margin-bottom:48px; }
+
+.t-wrap {
+  max-width:660px;
+  margin:0 auto;
+  padding:36px 24px 80px;
+}
+
+.t-prog {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:48px;
+}
+
 .t-prog-logo img { height:26px; }
 .t-prog-bw { flex:1; }
-.t-prog-tr { height:2px; background:var(--br); border-radius:2px; overflow:hidden; }
-.t-prog-fi { height:100%; background:var(--red); border-radius:2px; transition:width 0.5s ease; width:0%; }
-.t-prog-lb { font-size:11px; color:var(--f); margin-top:7px; text-align:right; }
-.step { display:none; animation:fu 0.3s ease; }
+
+.t-prog-tr {
+  height:2px;
+  background:var(--br);
+  border-radius:2px;
+  overflow:hidden;
+}
+
+.t-prog-fi {
+  height:100%;
+  background:var(--red);
+  border-radius:2px;
+  transition:width 0.5s ease;
+  width:0%;
+}
+
+.t-prog-lb {
+  font-size:11px;
+  color:var(--f);
+  margin-top:7px;
+  text-align:right;
+}
+
+.step {
+  display:none;
+  animation:fu 0.3s ease;
+}
+
 .step.on { display:block; }
-.s-cat { display:inline-flex; align-items:center; gap:10px; margin-bottom:14px; }
-.s-cn { width:28px; height:28px; border-radius:50%; background:rgba(232,8,15,0.12); border:1px solid rgba(232,8,15,0.25); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; color:var(--red); }
-.s-cl { font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--red); }
-.s-cp { font-size:11px; color:var(--f); }
-.step h2 { font-family:'Fraunces',serif; font-size:clamp(22px,3.5vw,34px); font-weight:600; line-height:1.1; letter-spacing:-0.6px; color:#fff; margin-bottom:10px; }
-.s-ctx { font-size:13px; color:var(--m); line-height:1.6; margin-bottom:24px; padding-left:12px; border-left:2px solid rgba(232,8,15,0.25); }
-.opts { display:flex; flex-direction:column; gap:8px; margin-bottom:28px; }
-.opt { display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid var(--br); border-radius:8px; cursor:pointer; transition:all 0.2s; }
-.opt:hover { border-color:rgba(232,8,15,0.35); background:rgba(232,8,15,0.04); }
-.opt.sel { border-color:var(--red); background:rgba(232,8,15,0.09); }
-.o-radio { width:18px; height:18px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.2); flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:1px; transition:all 0.2s; }
-.opt.sel .o-radio { border-color:var(--red); background:var(--red); }
-.o-radio::after { content:''; width:6px; height:6px; border-radius:50%; background:#fff; opacity:0; transition:opacity 0.2s; }
+
+.s-cat {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.s-cn {
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:rgba(232,8,15,0.12);
+  border:1px solid rgba(232,8,15,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:600;
+  color:var(--red);
+}
+
+.s-cl {
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--red);
+}
+
+.s-cp {
+  font-size:11px;
+  color:var(--f);
+}
+
+.step h2 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(22px,3.5vw,34px);
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-0.6px;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.s-ctx {
+  font-size:13px;
+  color:var(--m);
+  line-height:1.6;
+  margin-bottom:24px;
+  padding-left:12px;
+  border-left:2px solid rgba(232,8,15,0.25);
+}
+
+.opts {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:28px;
+}
+
+.opt {
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:14px 16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--br);
+  border-radius:8px;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+
+.opt:hover {
+  border-color:rgba(232,8,15,0.35);
+  background:rgba(232,8,15,0.04);
+}
+
+.opt.sel {
+  border-color:var(--red);
+  background:rgba(232,8,15,0.09);
+}
+
+.o-radio {
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.2);
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:1px;
+  transition:all 0.2s;
+}
+
+.opt.sel .o-radio {
+  border-color:var(--red);
+  background:var(--red);
+}
+
+.o-radio::after {
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#fff;
+  opacity:0;
+  transition:opacity 0.2s;
+}
+
 .opt.sel .o-radio::after { opacity:1; }
-.o-txt { font-size:14px; color:rgba(255,255,255,0.72); line-height:1.5; }
+
+.o-txt {
+  font-size:14px;
+  color:rgba(255,255,255,0.72);
+  line-height:1.5;
+}
+
 .opt.sel .o-txt { color:#fff; }
-.s-nav { display:flex; align-items:center; justify-content:space-between; }
-.s-back { font-size:14px; color:var(--m); background:none; border:none; cursor:pointer; font-family:'Outfit',sans-serif; padding:10px 0; transition:color 0.2s; }
+
+.s-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.s-back {
+  font-size:14px;
+  color:var(--m);
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-family:'Outfit', sans-serif;
+  padding:10px 0;
+  transition:color 0.2s;
+}
+
 .s-back:hover { color:#fff; }
-.s-next { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; background:var(--red); color:#fff; font-family:'Outfit',sans-serif; font-weight:600; font-size:14px; border-radius:8px; border:none; cursor:pointer; transition:all 0.2s; opacity:0.35; pointer-events:none; }
-.s-next.on { opacity:1; pointer-events:all; }
+
+.s-next {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:13px 28px;
+  background:var(--red);
+  color:#fff;
+  font-family:'Outfit', sans-serif;
+  font-weight:600;
+  font-size:14px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  transition:all 0.2s;
+  opacity:0.35;
+  pointer-events:none;
+}
+
+.s-next.on {
+  opacity:1;
+  pointer-events:all;
+}
+
 .s-next.on:hover { background:var(--red-l); }
 
-/* ── PAGE 3: VÝSLEDOK ── */
+/* PAGE 3: VÝSLEDOK */
 #pg3 { background:var(--bg); }
-.r-wrap { max-width:700px; margin:0 auto; padding:48px 24px 80px; }
-.r-wrap h1 { font-family:'Fraunces',serif; font-size:clamp(28px,4vw,44px); font-weight:600; line-height:1.05; letter-spacing:-1px; margin-bottom:12px; }
-.r-wrap h1 em { font-style:italic; color:var(--red-l); }
-.r-intro { font-size:15px; color:var(--m); line-height:1.7; margin-bottom:36px; }
-.r-intro strong { color:rgba(255,255,255,0.8); font-weight:500; }
-.sb-box { background:var(--bg3); border:1px solid var(--br); border-radius:12px; padding:24px 28px; margin-bottom:24px; }
-.sb-lbl { font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
-.sbs { display:flex; flex-direction:column; gap:11px; }
-.sb-row { display:grid; grid-template-columns:110px 1fr 28px; gap:10px; align-items:center; }
-.sb-la { font-size:12px; color:var(--m); }
-.sb-tr { height:3px; background:var(--br2); border-radius:2px; overflow:hidden; }
-.sb-fi { height:100%; border-radius:2px; transition:width 1.2s ease 0.2s; }
-.sb-pc { font-size:11px; color:rgba(255,255,255,0.3); text-align:right; }
-.finds { display:flex; flex-direction:column; gap:10px; margin-bottom:36px; }
-.find { padding:18px 22px; border-radius:10px; border:1px solid; }
-.find.cr { background:rgba(232,8,15,0.07); border-color:rgba(232,8,15,0.22); }
-.find.wa { background:rgba(255,160,0,0.05); border-color:rgba(255,160,0,0.18); }
-.find.go { background:rgba(80,200,120,0.05); border-color:rgba(80,200,120,0.18); }
-.f-area { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+
+.r-wrap {
+  max-width:700px;
+  margin:0 auto;
+  padding:48px 24px 80px;
+}
+
+.r-wrap h1 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(28px,4vw,44px);
+  font-weight:600;
+  line-height:1.05;
+  letter-spacing:-1px;
+  margin-bottom:12px;
+}
+
+.r-intro {
+  font-size:15px;
+  color:var(--m);
+  line-height:1.7;
+  margin-bottom:36px;
+}
+
+.r-intro strong {
+  color:rgba(255,255,255,0.8);
+  font-weight:500;
+}
+
+.sb-box {
+  background:var(--bg3);
+  border:1px solid var(--br);
+  border-radius:12px;
+  padding:24px 28px;
+  margin-bottom:24px;
+}
+
+.sb-lbl {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:16px;
+}
+
+.sbs {
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+
+.sb-row {
+  display:grid;
+  grid-template-columns:110px 1fr 28px;
+  gap:10px;
+  align-items:center;
+}
+
+.sb-la {
+  font-size:12px;
+  color:var(--m);
+}
+
+.sb-tr {
+  height:3px;
+  background:var(--br2);
+  border-radius:2px;
+  overflow:hidden;
+}
+
+.sb-fi {
+  height:100%;
+  border-radius:2px;
+  transition:width 1.2s ease 0.2s;
+}
+
+.sb-pc {
+  font-size:11px;
+  color:rgba(255,255,255,0.3);
+  text-align:right;
+}
+
+.finds {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:36px;
+}
+
+.find {
+  padding:18px 22px;
+  border-radius:10px;
+  border:1px solid;
+}
+
+.find.cr {
+  background:rgba(232,8,15,0.07);
+  border-color:rgba(232,8,15,0.22);
+}
+
+.find.wa {
+  background:rgba(255,160,0,0.05);
+  border-color:rgba(255,160,0,0.18);
+}
+
+.find.go {
+  background:rgba(80,200,120,0.05);
+  border-color:rgba(80,200,120,0.18);
+}
+
+.f-area {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
 .find.cr .f-area { color:var(--red-l); }
 .find.wa .f-area { color:#FFA040; }
 .find.go .f-area { color:#50C878; }
-.f-txt { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6; }
-.f-txt strong { color:#fff; font-weight:500; }
-.v-sec { margin-bottom:32px; }
-.v-lbl { font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
-.v-wrap { width:100%; aspect-ratio:16/9; background:var(--bg3); border:1px solid var(--br); border-radius:12px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-.v-ph { display:flex; flex-direction:column; align-items:center; gap:12px; color:var(--m); text-align:center; padding:24px; }
-.v-play { width:56px; height:56px; border-radius:50%; background:rgba(232,8,15,0.15); border:2px solid rgba(232,8,15,0.4); display:flex; align-items:center; justify-content:center; font-size:20px; padding-left:3px; }
-.cta { background:linear-gradient(135deg,rgba(232,8,15,0.1) 0%,rgba(232,8,15,0.02) 100%); border:1px solid rgba(232,8,15,0.2); border-radius:12px; padding:36px; text-align:center; }
-.cta h2 { font-family:'Fraunces',serif; font-size:26px; font-weight:600; letter-spacing:-0.4px; margin-bottom:10px; }
-.cta h2 em { font-style:italic; color:var(--red-l); }
-.cta p { font-size:14px; color:var(--m); line-height:1.65; margin-bottom:24px; }
-.cta p strong { color:rgba(255,255,255,0.8); font-weight:500; }
-.cta-btn { display:inline-flex; align-items:center; gap:8px; padding:15px 32px; background:var(--red); color:#fff; font-family:'Outfit',sans-serif; font-weight:600; font-size:15px; border-radius:8px; border:none; cursor:pointer; text-decoration:none; transition:all 0.25s; }
+
+.f-txt {
+  font-size:13px;
+  color:rgba(255,255,255,0.65);
+  line-height:1.6;
+}
+
+.f-txt strong {
+  color:#fff;
+  font-weight:500;
+}
+
+/* BLOK MIESTO VIDEA */
+.signal-box {
+  background:var(--bg3);
+  border:1px solid var(--br);
+  border-radius:12px;
+  padding:28px;
+  margin-bottom:32px;
+}
+
+.signal-lbl {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:12px;
+}
+
+.signal-box h2 {
+  font-family:'Fraunces', serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-0.4px;
+  margin-bottom:10px;
+}
+
+.signal-box p {
+  font-size:14px;
+  color:var(--m);
+  line-height:1.7;
+}
+
+.signal-box strong {
+  color:rgba(255,255,255,0.84);
+  font-weight:500;
+}
+
+.cta {
+  background:linear-gradient(135deg,rgba(232,8,15,0.1) 0%,rgba(232,8,15,0.02) 100%);
+  border:1px solid rgba(232,8,15,0.2);
+  border-radius:12px;
+  padding:36px;
+  text-align:center;
+}
+
+.cta h2 {
+  font-family:'Fraunces', serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-0.4px;
+  margin-bottom:10px;
+}
+
+.cta h2 em {
+  font-style:italic;
+  color:var(--red-l);
+}
+
+.cta p {
+  font-size:14px;
+  color:var(--m);
+  line-height:1.65;
+  margin-bottom:24px;
+}
+
+.cta p strong {
+  color:rgba(255,255,255,0.8);
+  font-weight:500;
+}
+
+.cta-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:15px 32px;
+  background:var(--red);
+  color:#fff;
+  font-family:'Outfit', sans-serif;
+  font-weight:600;
+  font-size:15px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all 0.25s;
+}
+
 .cta-btn:hover { background:var(--red-l); }
-.cta-note { font-size:12px; color:var(--f); margin-top:12px; }
-.pulse { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:18px; }
-.pulse-d { width:7px; height:7px; border-radius:50%; background:var(--red); animation:pu 2s infinite; }
-@keyframes pu { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-.pulse-t { font-size:12px; color:var(--red-l); font-weight:500; }
+
+.cta-note {
+  font-size:12px;
+  color:var(--f);
+  margin-top:12px;
+}
+
+.pulse {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.pulse-d {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+  animation:pu 2s infinite;
+}
+
+@keyframes pu {
+  0%,100% { opacity:1; }
+  50% { opacity:0.3; }
+}
+
+.pulse-t {
+  font-size:12px;
+  color:var(--red-l);
+  font-weight:500;
+}
+
+@media (max-width:640px) {
+  .p1-img {
+    width:100%;
+    right:0;
+    opacity:0.18;
+  }
+
+  .p1-gr {
+    background:linear-gradient(to bottom,rgba(8,8,8,0.68),var(--bg) 82%);
+  }
+
+  .p1-c {
+    padding:20px 22px 56px;
+  }
+
+  .p1-meta {
+    gap:16px;
+  }
+
+  .p1-md {
+    display:none;
+  }
+
+  .sb-box {
+    padding:22px 18px;
+  }
+
+  .sb-row {
+    grid-template-columns:88px 1fr 28px;
+  }
+
+  .cta {
+    padding:30px 22px;
+  }
+
+  .cta-btn {
+    width:100%;
+    justify-content:center;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <!-- PAGE 1: VSTUP -->
@@ -145,31 +807,82 @@ html,body { background:var(--bg); color:#fff; min-height:100vh; font-family:'Out
   <div class="p1-gr"></div>
   <div class="p1-gb"></div>
   <div class="p1-glow"></div>
+
   <div class="p1-c">
     <div class="logo" style="margin-bottom:28px;justify-content:flex-start;padding:0;">
       <img src="https://strate9y.com/wp-content/uploads/logo-bilocervena.svg" alt="STRATE9Y" style="height:32px;">
     </div>
-    <div class="ey"><div class="ey-l"></div><span class="ey-t">STRATE9Y STRESS TEST</span></div>
-    <h1>Zvládne tvoj biznis<br><em>tlak reality?</em></h1>
-    <p class="p1-sub">9 oblastí, ktoré rozhodujú o tom, či tvoj biznis rastie — alebo len prežíva. <strong>Zisti, kde ťa to brzdí najviac.</strong></p>
+
+    <div class="ey">
+      <div class="ey-l"></div>
+      <span class="ey-t">STRATE9Y® biznis test</span>
+    </div>
+
+    <h1>Kde sa váš biznis<br><em>skutočne zasekol?</em></h1>
+
+    <p class="p1-sub">
+      9 oblastí, ktoré ukážu, kde sa môže strácať smer, energia alebo rastový potenciál.
+      <strong>Získajte prvý signál pred hlbšou biznis diagnostikou.</strong>
+    </p>
+
     <div class="p1-meta">
-      <div class="p1-mi"><div class="p1-mn">9<span>×</span></div><div class="p1-ml">oblastí</div></div>
+      <div class="p1-mi">
+        <div class="p1-mn">9<span>×</span></div>
+        <div class="p1-ml">oblastí</div>
+      </div>
+
       <div class="p1-md"></div>
-      <div class="p1-mi"><div class="p1-mn">5<span>min</span></div><div class="p1-ml">dĺžka testu</div></div>
+
+      <div class="p1-mi">
+        <div class="p1-mn">5<span>min</span></div>
+        <div class="p1-ml">dĺžka testu</div>
+      </div>
+
       <div class="p1-md"></div>
-      <div class="p1-mi"><div class="p1-mn">0<span>€</span></div><div class="p1-ml">zadarmo</div></div>
+
+      <div class="p1-mi">
+        <div class="p1-mn">0<span>€</span></div>
+        <div class="p1-ml">zadarmo</div>
+      </div>
     </div>
+
     <div class="p1-form">
-      <input type="text" class="inp" id="uName" placeholder="Tvoje meno">
-      <input type="email" class="inp" id="uEmail" placeholder="Tvoj e-mail">
-      <button type="button" class="btn" onclick="goTest()">Spustiť Stress Test →</button>
-      <p class="p1-note">Zadarmo · Výsledok okamžite · Bez spamu</p>
+      <input type="text" class="inp" id="uName" placeholder="Vaše meno" autocomplete="name">
+
+      <input
+        type="email"
+        class="inp"
+        id="uEmail"
+        placeholder="Váš e-mail"
+        required
+        autocomplete="email"
+        inputmode="email"
+      >
+
+      <p class="p1-err" id="emailErr"></p>
+
+      <button type="button" class="btn" onclick="goTest()">Spustiť biznis test →</button>
+
+      <p class="p1-note">Zadarmo · výsledok okamžite · bez spamu</p>
     </div>
+
     <div class="p1-proof">
-      <div class="proof-lbl">Čo ťa čaká</div>
-      <div class="proof-item"><span class="proof-ck">◆</span><p class="proof-tx"><strong>9 otázok</strong> podľa STRATE9Y metódy — každá mapuje kľúčovú oblasť tvojho biznisu</p></div>
-      <div class="proof-item"><span class="proof-ck">◆</span><p class="proof-tx"><strong>Osobný výsledok</strong> — kde ťa to brzdí najviac a čo s tým</p></div>
-      <div class="proof-item"><span class="proof-ck">◆</span><p class="proof-tx"><strong>Výsledok </strong> rovno na obrazovke</p></div>
+      <div class="proof-lbl">Čo vás čaká</div>
+
+      <div class="proof-item">
+        <span class="proof-ck">◆</span>
+        <p class="proof-tx"><strong>9 otázok</strong> podľa STRATE9Y® metódy — každá mapuje kľúčovú oblasť vášho biznisu.</p>
+      </div>
+
+      <div class="proof-item">
+        <span class="proof-ck">◆</span>
+        <p class="proof-tx"><strong>Prvý výsledok</strong> — kde sa môže nachádzať hlavné slabé miesto.</p>
+      </div>
+
+      <div class="proof-item">
+        <span class="proof-ck">◆</span>
+        <p class="proof-tx"><strong>Výsledok rovno na obrazovke</strong> — bez čakania a bez zložitého vyhodnocovania.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -178,128 +891,178 @@ html,body { background:var(--bg); color:#fff; min-height:100vh; font-family:'Out
 <div class="pg" id="pg2">
   <div class="t-wrap">
     <div class="t-prog">
-      <div class="t-prog-logo"><img src="https://strate9y.com/wp-content/uploads/logo-bilocervena.svg" alt="STRATE9Y"></div>
+      <div class="t-prog-logo">
+        <img src="https://strate9y.com/wp-content/uploads/logo-bilocervena.svg" alt="STRATE9Y">
+      </div>
+
       <div class="t-prog-bw">
-        <div class="t-prog-tr"><div class="t-prog-fi" id="pFill"></div></div>
+        <div class="t-prog-tr">
+          <div class="t-prog-fi" id="pFill"></div>
+        </div>
         <div class="t-prog-lb" id="pLbl">1 / 9</div>
       </div>
     </div>
 
     <div class="step on" id="s0">
-      <div class="s-cat"><div class="s-cn">01</div><span class="s-cl">Problém</span><span class="s-cp">· NÁPAD</span></div>
-      <h2>Vieš presne, aký problém tvoj produkt rieši?</h2>
-      <p class="s-ctx">Zakladatelia často vedia, čo predávajú — ale nie prečo to zákazník skutočne potrebuje. Bez jasného problému nie je ani jasný zákazník.</p>
+      <div class="s-cat"><div class="s-cn">01</div><span class="s-cl">Problém</span><span class="s-cp">· SMER</span></div>
+      <h2>Viete presne, aký problém váš produkt alebo služba rieši?</h2>
+      <p class="s-ctx">Podnikatelia často vedia, čo predávajú. Menej jasné býva, prečo to zákazník skutočne potrebuje.</p>
+
       <div class="opts" id="o0">
-        <div class="opt" onclick="pick(0,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — dokážem to opísať jednou vetou a zákazník to okamžite pochopí</div></div>
-        <div class="opt" onclick="pick(0,1,1)"><div class="o-radio"></div><div class="o-txt">Približne — viem to všeobecne, ale neviem to presne pomenovať</div></div>
-        <div class="opt" onclick="pick(0,2,2)"><div class="o-radio"></div><div class="o-txt">Nie veľmi — produkt som vytvoril/a intuitívne, problém mi pripadal zrejmý</div></div>
-        <div class="opt" onclick="pick(0,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — neviem povedať, prečo ho niekto potrebuje</div></div>
+        <div class="opt" onclick="pick(0,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — dokážem to opísať jednou vetou a zákazník to okamžite pochopí.</div></div>
+        <div class="opt" onclick="pick(0,1,1)"><div class="o-radio"></div><div class="o-txt">Približne — viem to všeobecne, ale nie je to úplne ostré.</div></div>
+        <div class="opt" onclick="pick(0,2,2)"><div class="o-radio"></div><div class="o-txt">Nie veľmi — produkt alebo služba vznikli skôr intuitívne.</div></div>
+        <div class="opt" onclick="pick(0,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — neviem presne povedať, prečo by to mal zákazník potrebovať.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" style="visibility:hidden">← Späť</button><button type="button" class="s-next" id="n0" onclick="nxt(0)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" style="visibility:hidden">← Späť</button>
+        <button type="button" class="s-next" id="n0" onclick="nxt(0)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s1">
-      <div class="s-cat"><div class="s-cn">02</div><span class="s-cl">Zákazník</span><span class="s-cp">· NÁPAD</span></div>
-      <h2>Poznáš svojho zákazníka natoľko, aby si mu vedela napísať?</h2>
-      <p class="s-ctx">Nestačí demografia. Potrebuješ vedieť, čoho sa bojí a prečo to rieši práve teraz.</p>
+      <div class="s-cat"><div class="s-cn">02</div><span class="s-cl">Zákazník</span><span class="s-cp">· SMER</span></div>
+      <h2>Poznáte svojho zákazníka dostatočne konkrétne?</h2>
+      <p class="s-ctx">Nestačí vedieť vek, pohlavie alebo záujem. Potrebujete rozumieť tomu, čo zákazník rieši a prečo práve teraz.</p>
+
       <div class="opts" id="o1">
-        <div class="opt" onclick="pick(1,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — poznám konkrétnych ľudí, rozprávam sa s nimi a viem, čo prežívajú</div></div>
-        <div class="opt" onclick="pick(1,1,1)"><div class="o-radio"></div><div class="o-txt">Mám predstavu — ale skôr podľa seba, nie podľa dát</div></div>
-        <div class="opt" onclick="pick(1,2,2)"><div class="o-radio"></div><div class="o-txt">Len demograficky — vek, pohlavie, záujem</div></div>
-        <div class="opt" onclick="pick(1,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — produkt je „pre všetkých“</div></div>
+        <div class="opt" onclick="pick(1,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — poznám konkrétnych zákazníkov, ich situáciu, potreby aj nákupné dôvody.</div></div>
+        <div class="opt" onclick="pick(1,1,1)"><div class="o-radio"></div><div class="o-txt">Mám predstavu — ale je postavená viac na pocite než na dátach alebo rozhovoroch.</div></div>
+        <div class="opt" onclick="pick(1,2,2)"><div class="o-radio"></div><div class="o-txt">Poznám ho hlavne demograficky — vek, pohlavie, záujmy alebo typ zákazníka.</div></div>
+        <div class="opt" onclick="pick(1,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — produkt alebo služba sú stále príliš široko „pre všetkých“.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(1)">← Späť</button><button type="button" class="s-next" id="n1" onclick="nxt(1)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(1)">← Späť</button>
+        <button type="button" class="s-next" id="n1" onclick="nxt(1)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s2">
-      <div class="s-cat"><div class="s-cn">03</div><span class="s-cl">Moment</span><span class="s-cp">· NÁPAD</span></div>
-      <h2>Vieš, kedy zákazník tvoj produkt skutočne potrebuje?</h2>
-      <p class="s-ctx">Správny produkt v nesprávnom čase sa nepredá. Existuje konkrétny spúšťač nákupu.</p>
+      <div class="s-cat"><div class="s-cn">03</div><span class="s-cl">Moment</span><span class="s-cp">· SMER</span></div>
+      <h2>Viete, kedy zákazník váš produkt alebo službu skutočne potrebuje?</h2>
+      <p class="s-ctx">Správna ponuka v nesprávnom čase sa nepredá. Dôležitý je moment, v ktorom zákazník začne problém aktívne riešiť.</p>
+
       <div class="opts" id="o2">
-        <div class="opt" onclick="pick(2,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — viem presne, čo zákazníka privedie k nákupu a kedy to nastane</div></div>
-        <div class="opt" onclick="pick(2,1,1)"><div class="o-radio"></div><div class="o-txt">Tuším — ale neoverila som si to s reálnymi zákazníkmi</div></div>
-        <div class="opt" onclick="pick(2,2,2)"><div class="o-radio"></div><div class="o-txt">Nie veľmi — predpokladám, že kto to potrebuje, sám si to nájde</div></div>
-        <div class="opt" onclick="pick(2,3,2)"><div class="o-radio"></div><div class="o-txt">Vôbec — nikdy som nad tým takto nepremýšľala</div></div>
+        <div class="opt" onclick="pick(2,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — viem, čo zákazníka privedie k nákupu a kedy sa to deje.</div></div>
+        <div class="opt" onclick="pick(2,1,1)"><div class="o-radio"></div><div class="o-txt">Tuším — ale nemám to dostatočne overené s reálnymi zákazníkmi.</div></div>
+        <div class="opt" onclick="pick(2,2,2)"><div class="o-radio"></div><div class="o-txt">Nie veľmi — predpokladám, že kto to potrebuje, cestu si nájde.</div></div>
+        <div class="opt" onclick="pick(2,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — nad momentom nákupu som zatiaľ takto nepremýšľal/a.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(2)">← Späť</button><button type="button" class="s-next" id="n2" onclick="nxt(2)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(2)">← Späť</button>
+        <button type="button" class="s-next" id="n2" onclick="nxt(2)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s3">
       <div class="s-cat"><div class="s-cn">04</div><span class="s-cl">Riešenie</span><span class="s-cp">· STRATÉGIA</span></div>
-      <h2>Je tvoj produkt skutočne riešením — alebo len dobrým nápadom?</h2>
-      <p class="s-ctx">Mnoho produktov vzniká z nadšenia tvorcu, nie z potreby zákazníka.</p>
+      <h2>Je váš produkt alebo služba skutočne riešením — alebo len dobrým nápadom?</h2>
+      <p class="s-ctx">Silný produkt nevzniká len z nadšenia tvorcu. Musí riešiť problém, ktorý zákazník vníma ako dôležitý.</p>
+
       <div class="opts" id="o3">
-        <div class="opt" onclick="pick(3,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám spätnú väzbu od zákazníkov, ktorí potvrdili, že to funguje</div></div>
-        <div class="opt" onclick="pick(3,1,1)"><div class="o-radio"></div><div class="o-txt">Myslím, že áno — ale overila som si to len na priateľoch a rodine</div></div>
-        <div class="opt" onclick="pick(3,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — produkt vznikol z mojej vlastnej vízie, nie z prieskumu</div></div>
-        <div class="opt" onclick="pick(3,3,2)"><div class="o-radio"></div><div class="o-txt">Neviem — neviem, ako to overiť</div></div>
+        <div class="opt" onclick="pick(3,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám spätnú väzbu od zákazníkov, ktorí potvrdili, že riešenie funguje.</div></div>
+        <div class="opt" onclick="pick(3,1,1)"><div class="o-radio"></div><div class="o-txt">Myslím, že áno — ale overenie je zatiaľ skôr neformálne.</div></div>
+        <div class="opt" onclick="pick(3,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — vzniklo to hlavne z mojej vízie, nie z reálneho dopytu.</div></div>
+        <div class="opt" onclick="pick(3,3,2)"><div class="o-radio"></div><div class="o-txt">Neviem — nemám jasný spôsob, ako to overiť.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(3)">← Späť</button><button type="button" class="s-next" id="n3" onclick="nxt(3)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(3)">← Späť</button>
+        <button type="button" class="s-next" id="n3" onclick="nxt(3)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s4">
       <div class="s-cat"><div class="s-cn">05</div><span class="s-cl">Odlíšenie</span><span class="s-cp">· STRATÉGIA</span></div>
-      <h2>Prečo by zákazník kúpil od teba — a nie od niekoho iného?</h2>
-      <p class="s-ctx">Bez jasného odlíšenia si len jedna z mnohých možností.</p>
+      <h2>Viete jasne povedať, prečo by mal zákazník kúpiť práve od vás?</h2>
+      <p class="s-ctx">Ak rozdiel neviete pomenovať vy, zákazník ho väčšinou nevidí. Potom rozhoduje cena, náhoda alebo známosť.</p>
+
       <div class="opts" id="o4">
-        <div class="opt" onclick="pick(4,0,0)"><div class="o-radio"></div><div class="o-txt">Mám jasné USP — viem presne, čím sa líšime, a zákazníci to cítia</div></div>
-        <div class="opt" onclick="pick(4,1,1)"><div class="o-radio"></div><div class="o-txt">Myslím, že sme iní — ale neviem to presne komunikovať</div></div>
-        <div class="opt" onclick="pick(4,2,2)"><div class="o-radio"></div><div class="o-txt">Sme podobní ostatným — snažíme sa konkurovať cenou alebo kvalitou</div></div>
-        <div class="opt" onclick="pick(4,3,2)"><div class="o-radio"></div><div class="o-txt">Konkurenciu veľmi nesledujem — verím, že produkt hovorí sám za seba</div></div>
+        <div class="opt" onclick="pick(4,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — viem presne, čím sa líšime, a zákazníci tento rozdiel vnímajú.</div></div>
+        <div class="opt" onclick="pick(4,1,1)"><div class="o-radio"></div><div class="o-txt">Myslím, že sme iní — ale neviem to povedať dostatočne jednoducho.</div></div>
+        <div class="opt" onclick="pick(4,2,2)"><div class="o-radio"></div><div class="o-txt">Sme podobní ostatným — snažíme sa konkurovať najmä kvalitou, cenou alebo prístupom.</div></div>
+        <div class="opt" onclick="pick(4,3,2)"><div class="o-radio"></div><div class="o-txt">Konkurenciu veľmi nesledujem — verím, že produkt alebo služba hovoria samy za seba.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(4)">← Späť</button><button type="button" class="s-next" id="n4" onclick="nxt(4)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(4)">← Späť</button>
+        <button type="button" class="s-next" id="n4" onclick="nxt(4)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s5">
-      <div class="s-cat"><div class="s-cn">06</div><span class="s-cl">Model</span><span class="s-cp">· STRATÉGIA</span></div>
-      <h2>Má tvoj biznis logiku, ktorá funguje bez teba?</h2>
-      <p class="s-ctx">Biznis model je o tom, či rastie systém — alebo či rastie len tvoje zaťaženie.</p>
+      <div class="s-cat"><div class="s-cn">06</div><span class="s-cl">Systém</span><span class="s-cp">· STRATÉGIA</span></div>
+      <h2>Funguje váš biznis ako systém — alebo stojí hlavne na vás?</h2>
+      <p class="s-ctx">Biznis model nie je len o príjmoch. Je aj o tom, či rastie systém, alebo len vaše zaťaženie.</p>
+
       <div class="opts" id="o5">
-        <div class="opt" onclick="pick(5,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám nastavené procesy, biznis funguje aj vtedy, keď ja nie</div></div>
-        <div class="opt" onclick="pick(5,1,1)"><div class="o-radio"></div><div class="o-txt">Čiastočne — niečo funguje samo, ale väčšina závisí odo mňa</div></div>
-        <div class="opt" onclick="pick(5,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — som stredobodom všetkého, bezo mňa sa nič nepohne</div></div>
-        <div class="opt" onclick="pick(5,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — o biznis modeli som zatiaľ veľmi nepremýšľala</div></div>
+        <div class="opt" onclick="pick(5,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám nastavené procesy a biznis vie fungovať aj bez mojej neustálej prítomnosti.</div></div>
+        <div class="opt" onclick="pick(5,1,1)"><div class="o-radio"></div><div class="o-txt">Čiastočne — niečo funguje samo, ale veľká časť stále závisí odo mňa.</div></div>
+        <div class="opt" onclick="pick(5,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — som stredobodom väčšiny rozhodnutí, úloh a pohybu v biznise.</div></div>
+        <div class="opt" onclick="pick(5,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — zatiaľ to celé drží hlavne moja energia a operatíva.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(5)">← Späť</button><button type="button" class="s-next" id="n5" onclick="nxt(5)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(5)">← Späť</button>
+        <button type="button" class="s-next" id="n5" onclick="nxt(5)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s6">
       <div class="s-cat"><div class="s-cn">07</div><span class="s-cl">Ponuka</span><span class="s-cp">· AKCIA</span></div>
       <h2>Dokáže zákazník okamžite pochopiť, čo kupuje a čo tým získa?</h2>
-      <p class="s-ctx">Ponuka je prísľub výsledku. Ak zákazník do 5 sekúnd nevie, čo dostane, nekúpi.</p>
+      <p class="s-ctx">Ponuka je prísľub výsledku. Ak ju musíte dlho vysvetľovať, zákazník často odíde skôr, než pochopí hodnotu.</p>
+
       <div class="opts" id="o6">
-        <div class="opt" onclick="pick(6,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — ponuka je jasná a zákazník vie, čo dostane</div></div>
-        <div class="opt" onclick="pick(6,1,1)"><div class="o-radio"></div><div class="o-txt">Približne — ale musím to zákazníkovi vždy vysvetliť osobne</div></div>
-        <div class="opt" onclick="pick(6,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — zákazníci sa pýtajú na detaily, prezentácia je zložitá</div></div>
-        <div class="opt" onclick="pick(6,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — neviem ponuku zjednodušiť, produkt je komplexný</div></div>
+        <div class="opt" onclick="pick(6,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — ponuka je jasná a zákazník rýchlo rozumie, čo získa.</div></div>
+        <div class="opt" onclick="pick(6,1,1)"><div class="o-radio"></div><div class="o-txt">Približne — ale často ju musím vysvetľovať osobne alebo dopĺňať kontext.</div></div>
+        <div class="opt" onclick="pick(6,2,2)"><div class="o-radio"></div><div class="o-txt">Skôr nie — zákazníci sa pýtajú na veľa detailov a prezentácia je zložitá.</div></div>
+        <div class="opt" onclick="pick(6,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — ponuka je komplexná a neviem ju zjednodušiť bez straty významu.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(6)">← Späť</button><button type="button" class="s-next" id="n6" onclick="nxt(6)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(6)">← Späť</button>
+        <button type="button" class="s-next" id="n6" onclick="nxt(6)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s7">
       <div class="s-cat"><div class="s-cn">08</div><span class="s-cl">Distribúcia</span><span class="s-cp">· AKCIA</span></div>
-      <h2>Ako získavaš zákazníkov dnes?</h2>
-      <p class="s-ctx">Dobrý produkt bez distribúcie je tajomstvo.</p>
+      <h2>Viete, odkiaľ dnes prichádzajú vaši zákazníci?</h2>
+      <p class="s-ctx">Dobrý produkt bez distribúcie ostáva tajomstvom. Rastu pomáha kanál, ktorý viete pomenovať, ovplyvniť a opakovať.</p>
+
       <div class="opts" id="o7">
-        <div class="opt" onclick="pick(7,0,0)"><div class="o-radio"></div><div class="o-txt">Mám funkčný kanál — viem, odkiaľ zákazníci prichádzajú, a môžem to škálovať</div></div>
-        <div class="opt" onclick="pick(7,1,1)"><div class="o-radio"></div><div class="o-txt">Hlavne odporúčania — zákazníci prichádzajú, ale neviem to ovplyvniť</div></div>
-        <div class="opt" onclick="pick(7,2,2)"><div class="o-radio"></div><div class="o-txt">Sociálne siete — postujem, ale predaje to neprináša</div></div>
-        <div class="opt" onclick="pick(7,3,2)"><div class="o-radio"></div><div class="o-txt">E-shop — spustila som ho a čakám, že zákazníci si cestu nájdu sami</div></div>
+        <div class="opt" onclick="pick(7,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám funkčný kanál a viem, odkiaľ zákazníci prichádzajú.</div></div>
+        <div class="opt" onclick="pick(7,1,1)"><div class="o-radio"></div><div class="o-txt">Hlavne odporúčania — zákazníci prichádzajú, ale neviem to stabilne ovplyvniť.</div></div>
+        <div class="opt" onclick="pick(7,2,2)"><div class="o-radio"></div><div class="o-txt">Najmä sociálne siete alebo obsah — aktivita je, ale výsledok nie je stabilný.</div></div>
+        <div class="opt" onclick="pick(7,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — skôr čakám, že si zákazníci cestu nájdu sami.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(7)">← Späť</button><button type="button" class="s-next" id="n7" onclick="nxt(7)">Ďalej →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(7)">← Späť</button>
+        <button type="button" class="s-next" id="n7" onclick="nxt(7)">Ďalej →</button>
+      </div>
     </div>
 
     <div class="step" id="s8">
       <div class="s-cat"><div class="s-cn">09</div><span class="s-cl">Ďalší krok</span><span class="s-cp">· AKCIA</span></div>
-      <h2>Vieš, aký je tvoj najdôležitejší ďalší krok?</h2>
-      <p class="s-ctx">Správny ďalší krok je len jeden. Zvyšok počká.</p>
+      <h2>Viete, aký je teraz váš najdôležitejší ďalší krok?</h2>
+      <p class="s-ctx">Zoznam úloh nie je stratégia. Strategický posun často začína tým, že sa rozhodnete, čo teraz neriešiť.</p>
+
       <div class="opts" id="o8">
-        <div class="opt" onclick="pick(8,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám jasnú prioritu a viem, prečo práve túto</div></div>
-        <div class="opt" onclick="pick(8,1,1)"><div class="o-radio"></div><div class="o-txt">Mám zoznam vecí — ale neviem, čo riešiť ako prvé</div></div>
-        <div class="opt" onclick="pick(8,2,2)"><div class="o-radio"></div><div class="o-txt">Robím to, čo sa práve ponúka — reagujem na príležitosti, nemám plán</div></div>
-        <div class="opt" onclick="pick(8,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — cítim sa zahltená a neviem, kde začať</div></div>
+        <div class="opt" onclick="pick(8,0,0)"><div class="o-radio"></div><div class="o-txt">Áno — mám jasnú prioritu a viem, prečo práve táto vec rozhoduje najviac.</div></div>
+        <div class="opt" onclick="pick(8,1,1)"><div class="o-radio"></div><div class="o-txt">Mám zoznam vecí — ale nie je jasné, čo má ísť ako prvé.</div></div>
+        <div class="opt" onclick="pick(8,2,2)"><div class="o-radio"></div><div class="o-txt">Reagujem na to, čo práve horí alebo sa ponúka.</div></div>
+        <div class="opt" onclick="pick(8,3,2)"><div class="o-radio"></div><div class="o-txt">Nie — cítim zahltenie a neviem, kde začať.</div></div>
       </div>
-      <div class="s-nav"><button type="button" class="s-back" onclick="bck(8)">← Späť</button><button type="button" class="s-next" id="n8" onclick="showRes()">Zobraziť výsledok →</button></div>
+
+      <div class="s-nav">
+        <button type="button" class="s-back" onclick="bck(8)">← Späť</button>
+        <button type="button" class="s-next" id="n8" onclick="showRes()">Zobraziť výsledok →</button>
+      </div>
     </div>
   </div>
 </div>
@@ -307,163 +1070,344 @@ html,body { background:var(--bg); color:#fff; min-height:100vh; font-family:'Out
 <!-- PAGE 3: VÝSLEDOK -->
 <div class="pg" id="pg3">
   <div class="r-wrap">
-    <div class="logo" style="margin-bottom:32px;justify-content:flex-start;padding:0;"><img src="https://strate9y.com/wp-content/uploads/logo-bilocervena.svg" alt="STRATE9Y" style="height:28px;"></div>
-    <div class="ey"><div class="ey-l"></div><span class="ey-t">Tvoj výsledok</span></div>
+    <div class="logo" style="margin-bottom:32px;justify-content:flex-start;padding:0;">
+      <img src="https://strate9y.com/wp-content/uploads/logo-bilocervena.svg" alt="STRATE9Y" style="height:28px;">
+    </div>
+
+    <div class="ey">
+      <div class="ey-l"></div>
+      <span class="ey-t">Váš výsledok</span>
+    </div>
+
     <h1 id="rTitle">Vidím, kde to viazne.</h1>
     <p class="r-intro" id="rIntro"></p>
+
     <div class="sb-box">
-      <div class="sb-lbl">Prehľad 9 oblastí STRATE9Y metódy</div>
+      <div class="sb-lbl">Prehľad 9 oblastí STRATE9Y® metódy</div>
       <div class="sbs" id="rBars"></div>
     </div>
+
     <div class="finds" id="rFinds"></div>
-    <div class="v-sec">
-      <div class="v-lbl">Pozri sa — čo s tým robím</div>
-      <div class="v-wrap">
-        <div class="v-ph">
-          <div class="v-play">▶</div>
-          <p>Video bude dostupné po natočení</p>
-        </div>
-      </div>
+
+    <div class="signal-box">
+      <div class="signal-lbl">Čo znamená výsledok</div>
+      <h2>Výsledok testu nie je diagnóza. Je to prvý signál.</h2>
+      <p>
+        Test ukazuje, kde sa môže nachádzať slabé miesto. Skutočná hodnota vzniká až vtedy,
+        keď sa výsledok zasadí do kontextu vášho biznisu: ponuky, zákazníka, systému,
+        kapacity a rozhodnutí, ktoré dnes robíte.
+        <strong>Na to slúži STRATE9Y® biznis diagnostika.</strong>
+      </p>
     </div>
+
     <div class="cta">
-      <div class="pulse"><div class="pulse-d"></div><span class="pulse-t">Aktuálne mám voľné miesta</span></div>
-      <h2>Chceš vedieť, čo s tým <em>konkrétne?</em></h2>
-      <p>Discovery call je <strong>bezplatný 30-minútový hovor</strong>. Zistíme, či si sadneme a či dáva spolupráca zmysel. Bez záväzkov. Bez tlaku.</p>
-      <a href="https://calendly.com/hana-krchova/konzultace" target="_blank" class="cta-btn">Rezervovať discovery call →</a>
-      <p class="cta-note">Hana Krchová · STRATE9Y · 30 min · Zadarmo</p>
+      <div class="pulse">
+        <div class="pulse-d"></div>
+        <span class="pulse-t">Aktuálne mám 2 voľné miesta pre biznis diagnostiku</span>
+      </div>
+
+      <h2>Chcete vedieť, čo s výsledkom <em>konkrétne?</em></h2>
+
+      <p>
+        Rezervujte si <strong>bezplatný 15-minútový úvodný rozhovor</strong>.
+        Pozrieme sa na váš výsledok, zasadíme ho do kontextu vášho biznisu
+        a zistíme, či dáva zmysel pokračovať do STRATE9Y® biznis diagnostiky.
+      </p>
+
+      <a href="https://calendly.com/hana-krchova/konzultace" target="_blank" rel="noopener" class="cta-btn">
+        Rezervovať 15-minútový rozhovor →
+      </a>
+
+      <p class="cta-note">
+        Hana Krchová · STRATE9Y® · 15 min · zadarmo · bez tlaku
+      </p>
     </div>
   </div>
 </div>
 
 <script>
 const MAKE = "https://hook.eu2.make.com/v7psotyrwkkjvjlu7oifgh2ol4gy2fhr";
-const AREAS = ["Problém","Zákazník","Moment","Riešenie","Odlíšenie","Model","Ponuka","Distribúcia","Ďalší krok"];
-const FT = [
-  ["Jasnosť problému je silná stránka.","Problém je definovaný len všeobecne — zákazník musí cítiť, že hovoríš o ňom, nie o všetkých.","Bez jasne pomenovaného problému hľadáš zákazníka naslepo. <strong>Toto je najčastejšia príčina nulových predajov.</strong>"],
-  ["Znalosť zákazníka je tvoja konkurenčná výhoda.","Zákazník definovaný len demograficky nekupuje. <strong>Potrebuješ vedieť, čo ho ráno brzdí a večer trápi.</strong>","Bez konkrétneho zákazníka hovoríš ku všetkým a nikto sa v tom nespozná."],
-  ["Poznáš spúšťač nákupu — silná pozícia.","Tušíš timing, ale bez overenia oslovuješ v nesprávnom čase. <strong>Správny moment dokáže výrazne zvýšiť konverzie.</strong>","Bez znalosti správneho momentu hádžeš ponuky do prázdna."],
-  ["Overený produkt je silná východisková pozícia.","Overenie len na blízkych nie je overenie. <strong>Blízki často nekupujú — kupujú cudzí ľudia z vlastnej vôle.</strong>","Produkt bez trhového overenia je stávka naslepo."],
-  ["Jasné odlíšenie je základ obchodnej pozície.","Cítiš, že ste iní — ale musíš to povedať za 10 sekúnd. <strong>Ak to nepovieš ty, zákazník to nevie.</strong>","Bez jasného odlíšenia vždy prehráva ten s vyššou cenou."],
-  ["Biznis fungujúci bez teba je základ škálovania.","Biznis závislý z veľkej časti od teba je sklenený strop. <strong>Každý krok vyššie vyžaduje viac teba — a ty máš len 24 hodín.</strong>","Si stredobodom všetkého. To nie je škálovanie — to je pasca."],
-  ["Jasná ponuka je najrýchlejšia cesta k predaju.","Ak musíš každému vysvetľovať osobne, ponuka ešte nie je hotová. <strong>Dobrá ponuka predáva sama.</strong>","Zložitosť zabíja predaje — zákazník nekúpi to, čomu nerozumie."],
-  ["Funkčný distribučný kanál je chrbtica biznisu.","Odporúčania sú skvelé, ale nespoľahlivé. <strong>Potrebuješ kanál, ktorý ovládaš a môžeš škálovať.</strong>","E-shop a sociálne siete samy od seba nepredávajú. Nikdy nepredávali."],
-  ["Jasná priorita je najcennejšia vec v biznise.","Zoznam bez priority je ilúzia produktivity. <strong>Jeden správny krok prinesie viac ako desať nesprávnych.</strong>","Bez jasného ďalšieho kroku sa točíš v kruhu. Zahltenie je príčina stagnácie — nie nedostatok práce."]
+
+const AREAS = [
+  "Problém",
+  "Zákazník",
+  "Moment",
+  "Riešenie",
+  "Odlíšenie",
+  "Systém",
+  "Ponuka",
+  "Distribúcia",
+  "Ďalší krok"
 ];
 
-let uName="", uEmail="";
-let answers=new Array(9).fill(null), scores=new Array(9).fill(null), cur=0;
+const FT = [
+  [
+    "Jasnosť problému je vaša silná stránka.",
+    "Problém je definovaný len všeobecne. Zákazník musí cítiť, že hovoríte o jeho situácii, nie o všetkých naraz.",
+    "Bez jasne pomenovaného problému hľadáte zákazníka naslepo. <strong>Toto je častá príčina slabého predaja aj pri dobrom produkte.</strong>"
+  ],
+  [
+    "Znalosť zákazníka je vaša konkurenčná výhoda.",
+    "Zákazník je zatiaľ definovaný skôr všeobecne. Potrebujete lepšie rozumieť jeho motivácii, strachu a nákupnému momentu.",
+    "Bez konkrétneho zákazníka hovoríte ku všetkým — a nikto sa v tom nemusí spoznať."
+  ],
+  [
+    "Poznáte nákupný moment — to je silná pozícia.",
+    "Nákupný moment tušíte, ale nie je dostatočne overený. Správne načasovanie výrazne mení účinnosť ponuky.",
+    "Ak neviete, kedy zákazník problém rieši, ponuka môže prichádzať v nesprávnom čase."
+  ],
+  [
+    "Overené riešenie je silná východisková pozícia.",
+    "Riešenie pôsobí zmysluplne, ale potrebuje silnejšie overenie mimo blízkeho okolia.",
+    "Produkt alebo služba bez trhového overenia môžu byť dobrý nápad — ale ešte nie funkčný biznisový základ."
+  ],
+  [
+    "Jasné odlíšenie posilňuje vašu obchodnú pozíciu.",
+    "Cítite, že ste iní, ale rozdiel potrebuje jednoduchšie pomenovanie. Ak ho nepoviete vy, zákazník ho nemusí vidieť.",
+    "Bez jasného odlíšenia zákazník často porovnáva len cenu, známosť alebo prvý dojem."
+  ],
+  [
+    "Biznis má prvky systému, ktoré môžu podporiť rast.",
+    "Časť systému funguje, ale veľa vecí stále stojí na vás. To môže brzdiť stabilitu aj ďalší rast.",
+    "Ak biznis stojí hlavne na vašej energii, nejde o škálovanie. Je to skôr sklenený strop."
+  ],
+  [
+    "Jasná ponuka pomáha zákazníkovi rýchlo pochopiť hodnotu.",
+    "Ponuka dáva zmysel, ale zrejme potrebuje zjednodušiť. Ak ju musíte dlho vysvetľovať, časť zákazníkov odpadne.",
+    "Zložitosť zabíja predaj. Zákazník nekúpi to, čomu nerozumie."
+  ],
+  [
+    "Funkčný distribučný kanál je silný základ.",
+    "Zákazníci prichádzajú, ale kanál nie je dostatočne predvídateľný alebo ovplyvniteľný.",
+    "Dobrý produkt bez distribúcie ostáva tajomstvom. E-shop, obsah ani sociálne siete samy od seba nestačia."
+  ],
+  [
+    "Jasná priorita je jedna z najcennejších vecí v biznise.",
+    "Máte viac možných krokov, ale chýba jasné poradie. To vytvára aktivitu bez strategického ťahu.",
+    "Bez jasného ďalšieho kroku sa energia triešti. Zahltenie často nie je nedostatok práce, ale nedostatok rozhodnutia."
+  ]
+];
+
+let uName = "";
+let uEmail = "";
+let answers = new Array(9).fill(null);
+let scores = new Array(9).fill(null);
+let cur = 0;
 
 function showPg(id) {
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.pg').forEach(p => p.classList.remove('on'));
   document.getElementById(id).classList.add('on');
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
+}
+
+function isValidEmail(email) {
+  const e = email.trim().toLowerCase();
+  const basicPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  if (!basicPattern.test(e)) return false;
+  if (e.includes('..')) return false;
+
+  const parts = e.split('@');
+  if (parts.length !== 2) return false;
+
+  const local = parts[0];
+  const domain = parts[1];
+
+  if (!local || !domain) return false;
+  if (domain.startsWith('.') || domain.endsWith('.')) return false;
+  if (!domain.includes('.')) return false;
+
+  const blockedExamples = [
+    'test@test.com',
+    'test@gmail.com',
+    'a@a.com',
+    'aa@aa.com',
+    'email@email.com'
+  ];
+
+  if (blockedExamples.includes(e)) return false;
+
+  return true;
 }
 
 function goTest() {
-  const e=document.getElementById('uEmail').value.trim();
-  if(!e||!e.includes('@')){document.getElementById('uEmail').style.borderColor='rgba(232,8,15,0.8)';document.getElementById('uEmail').focus();return;}
-  uName=document.getElementById('uName').value.trim()||'—';
-  uEmail=e;
+  const emailInput = document.getElementById('uEmail');
+  const errorBox = document.getElementById('emailErr');
+  const e = emailInput.value.trim();
+
+  emailInput.style.borderColor = '';
+  errorBox.textContent = '';
+
+  if (!isValidEmail(e)) {
+    emailInput.style.borderColor = 'rgba(232,8,15,0.8)';
+    errorBox.textContent = 'Zadajte prosím platný e-mail. Výsledok testu naň môžeme naviazať.';
+    emailInput.focus();
+    return;
+  }
+
+  uName = document.getElementById('uName').value.trim() || '—';
+  uEmail = e;
+
   showPg('pg2');
   updProg();
 }
 
-function pick(si,oi,sc) {
-  document.querySelectorAll('#o'+si+' .opt').forEach(o=>o.classList.remove('sel'));
-  document.querySelectorAll('#o'+si+' .opt')[oi].classList.add('sel');
-  answers[si]=oi; scores[si]=sc;
-  document.getElementById('n'+si).classList.add('on');
+function pick(si, oi, sc) {
+  document.querySelectorAll('#o' + si + ' .opt').forEach(o => o.classList.remove('sel'));
+  document.querySelectorAll('#o' + si + ' .opt')[oi].classList.add('sel');
+  answers[si] = oi;
+  scores[si] = sc;
+  document.getElementById('n' + si).classList.add('on');
 }
 
 function nxt(si) {
-  if(answers[si]===null)return;
-  document.getElementById('s'+si).classList.remove('on');
-  cur=si+1;
-  document.getElementById('s'+cur).classList.add('on');
+  if (answers[si] === null) return;
+
+  document.getElementById('s' + si).classList.remove('on');
+  cur = si + 1;
+  document.getElementById('s' + cur).classList.add('on');
+
   updProg();
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 
 function bck(si) {
-  document.getElementById('s'+si).classList.remove('on');
-  cur=si-1;
-  document.getElementById('s'+cur).classList.add('on');
+  document.getElementById('s' + si).classList.remove('on');
+  cur = si - 1;
+  document.getElementById('s' + cur).classList.add('on');
+
   updProg();
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 
 function updProg() {
-  document.getElementById('pFill').style.width=(cur/9*100)+'%';
-  document.getElementById('pLbl').textContent=(cur+1)+' / 9';
+  document.getElementById('pFill').style.width = (cur / 9 * 100) + '%';
+  document.getElementById('pLbl').textContent = (cur + 1) + ' / 9';
 }
 
 function showRes() {
-  if(answers[8]===null)return;
+  if (answers[8] === null) return;
+
   showPg('pg3');
   buildRes();
   sendMake();
 }
 
 function buildRes() {
-  const tot=scores.reduce((a,b)=>a+b,0);
-  let title,intro;
-  if(tot<=4){title="Dobrý základ. Čas ho rozvinúť.";intro="Tvoj biznis má silný základ vo väčšine oblastí. <strong>Stačí však pár slepých miest a celý systém sa môže brzdiť.</strong>";}
-  else if(tot<=10){title="Vidím, kde to viazne.";intro="Máš produkt s potenciálom — ale vo viacerých kľúčových oblastiach sú medzery, ktoré <strong>brzdia celý biznis</strong>. Nie je to o snahe, je to o systéme.";}
-  else{title="Hlavná príčina je jasná.";intro="Tvoj biznis má <strong>výrazné medzery vo viacerých oblastiach naraz.</strong> Bez systémovej práce sa to samo nevyrieši.";}
-  document.getElementById('rTitle').textContent=title;
-  document.getElementById('rIntro').innerHTML=intro;
+  const tot = scores.reduce((a, b) => a + b, 0);
+  let title, intro;
 
-  const bEl=document.getElementById('rBars');
-  bEl.innerHTML='';
-  scores.forEach((s,i)=>{
-    const pct=s===0?100:s===1?58:18;
-    const col=s===0?'#50C878':s===1?'#FFA040':'#E8080F';
-    bEl.innerHTML+='<div class="sb-row"><span class="sb-la">'+AREAS[i]+'</span><div class="sb-tr"><div class="sb-fi" style="width:'+pct+'%;background:'+col+';"></div></div><span class="sb-pc">'+pct+'%</span></div>';
+  if (tot <= 4) {
+    title = "Dobrý základ. Teraz ho treba správne rozvinúť.";
+    intro = "Váš biznis má silný základ vo viacerých oblastiach. <strong>Aj malé slepé miesto však môže brzdiť ďalší rast, ak ostane nepomenované.</strong>";
+  } else if (tot <= 10) {
+    title = "Vidím, kde to môže viaznuť.";
+    intro = "Máte produkt, službu alebo know-how s potenciálom — ale vo viacerých oblastiach sú miesta, ktoré <strong>môžu brzdiť celý biznis</strong>. Nie je to len o väčšej snahe. Je to o systéme.";
+  } else {
+    title = "Hlavná príčina pravdepodobne nie je len jedna.";
+    intro = "Váš biznis má <strong>výrazné napätie vo viacerých oblastiach naraz.</strong> Bez jasnej diagnostiky sa ľahko stane, že budete opravovať viditeľný symptóm namiesto skutočnej príčiny.";
+  }
+
+  document.getElementById('rTitle').textContent = title;
+  document.getElementById('rIntro').innerHTML = intro;
+
+  const bEl = document.getElementById('rBars');
+  bEl.innerHTML = '';
+
+  scores.forEach((s, i) => {
+    const pct = s === 0 ? 100 : s === 1 ? 58 : 18;
+    const col = s === 0 ? '#50C878' : s === 1 ? '#FFA040' : '#E8080F';
+
+    bEl.innerHTML +=
+      '<div class="sb-row">' +
+        '<span class="sb-la">' + AREAS[i] + '</span>' +
+        '<div class="sb-tr"><div class="sb-fi" style="width:' + pct + '%;background:' + col + ';"></div></div>' +
+        '<span class="sb-pc">' + pct + '%</span>' +
+      '</div>';
   });
 
-  const fEl=document.getElementById('rFinds');
-  fEl.innerHTML='';
-  scores.map((s,i)=>({s,i})).filter(x=>x.s>=2).slice(0,3).forEach(({i})=>{
-    fEl.innerHTML+='<div class="find cr"><div class="f-area">'+AREAS[i]+' — hlavné slepé miesto</div><p class="f-txt">'+FT[i][2]+'</p></div>';
-  });
-  scores.map((s,i)=>({s,i})).filter(x=>x.s===1).slice(0,2).forEach(({i})=>{
-    fEl.innerHTML+='<div class="find wa"><div class="f-area">'+AREAS[i]+' — priestor na posun</div><p class="f-txt">'+FT[i][1]+'</p></div>';
-  });
-  scores.map((s,i)=>({s,i})).filter(x=>x.s===0).slice(0,2).forEach(({i})=>{
-    fEl.innerHTML+='<div class="find go"><div class="f-area">'+AREAS[i]+' — silná stránka</div><p class="f-txt">'+FT[i][0]+'</p></div>';
-  });
+  const fEl = document.getElementById('rFinds');
+  fEl.innerHTML = '';
+
+  scores.map((s, i) => ({s, i}))
+    .filter(x => x.s >= 2)
+    .slice(0, 3)
+    .forEach(({i}) => {
+      fEl.innerHTML +=
+        '<div class="find cr">' +
+          '<div class="f-area">' + AREAS[i] + ' — hlavné slepé miesto</div>' +
+          '<p class="f-txt">' + FT[i][2] + '</p>' +
+        '</div>';
+    });
+
+  scores.map((s, i) => ({s, i}))
+    .filter(x => x.s === 1)
+    .slice(0, 2)
+    .forEach(({i}) => {
+      fEl.innerHTML +=
+        '<div class="find wa">' +
+          '<div class="f-area">' + AREAS[i] + ' — priestor na posun</div>' +
+          '<p class="f-txt">' + FT[i][1] + '</p>' +
+        '</div>';
+    });
+
+  scores.map((s, i) => ({s, i}))
+    .filter(x => x.s === 0)
+    .slice(0, 2)
+    .forEach(({i}) => {
+      fEl.innerHTML +=
+        '<div class="find go">' +
+          '<div class="f-area">' + AREAS[i] + ' — silná stránka</div>' +
+          '<p class="f-txt">' + FT[i][0] + '</p>' +
+        '</div>';
+    });
 }
 
 async function sendMake() {
-  if(MAKE==="VLOZ_SEM_SVOJ_MAKE_WEBHOOK_URL") return;
+  if (MAKE === "VLOZ_SEM_SVOJ_MAKE_WEBHOOK_URL") return;
 
-  const tot=scores.reduce((a,b)=>a+b,0);
-  const crit=scores.map((s,i)=>({s,i})).filter(x=>x.s>=2).map(x=>AREAS[x.i]).join(", ");
-  const warn=scores.map((s,i)=>({s,i})).filter(x=>x.s===1).map(x=>AREAS[x.i]).join(", ");
-  const good=scores.map((s,i)=>({s,i})).filter(x=>x.s===0).map(x=>AREAS[x.i]).join(", ");
+  const tot = scores.reduce((a, b) => a + b, 0);
+
+  const crit = scores.map((s, i) => ({s, i}))
+    .filter(x => x.s >= 2)
+    .map(x => AREAS[x.i])
+    .join(", ");
+
+  const warn = scores.map((s, i) => ({s, i}))
+    .filter(x => x.s === 1)
+    .map(x => AREAS[x.i])
+    .join(", ");
+
+  const good = scores.map((s, i) => ({s, i}))
+    .filter(x => x.s === 0)
+    .map(x => AREAS[x.i])
+    .join(", ");
 
   const payload = {
-    meno:uName,
-    email:uEmail,
-    celkove_skore:tot,
-    uroven:tot<=4 ? "Dobrý základ" : tot<=10 ? "Vidím, kde to viazne" : "Hlavná príčina je jasná",
-    hlavne_slepe_miesta:crit || "Žiadne",
-    varovania:warn || "Žiadne",
-    silne_stranky:good || "Žiadne",
-    timestamp:new Date().toISOString()
+    meno: uName,
+    email: uEmail,
+    celkove_skore: tot,
+    uroven: tot <= 4 ? "Dobrý základ" : tot <= 10 ? "Vidím, kde to môže viaznuť" : "Hlavná príčina pravdepodobne nie je len jedna",
+    hlavne_slepe_miesta: crit || "Žiadne",
+    varovania: warn || "Žiadne",
+    silne_stranky: good || "Žiadne",
+    timestamp: new Date().toISOString()
   };
 
-  try{
-    const c=new AbortController();
-    setTimeout(()=>c.abort(),5000);
-    await fetch(MAKE,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(payload),
-      signal:c.signal
+  try {
+    const c = new AbortController();
+    setTimeout(() => c.abort(), 5000);
+
+    await fetch(MAKE, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload),
+      signal: c.signal
     });
-  }catch(e){}
+  } catch(e) {}
 }
 </script>
+
 </body>
 </html>
+
